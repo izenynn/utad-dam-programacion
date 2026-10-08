@@ -1,0 +1,67 @@
+#
+# .editorconfig
+#
+# Code style shared by every editor, following the Oracle "Code Conventions for
+# the Java Programming Language": 4-space indent, 80 columns, 8-space
+# continuation, K&R braces.
+# https://www.oracle.com/java/technologies/javase/codeconventions-contents.html
+#
+# IntelliJ reads it natively and applies it on "Reformat Code"; the ij_* keys
+# are its own formatter options.
+#
+
+root = true
+
+[*]
+charset = utf-8
+end_of_line = lf
+insert_final_newline = true
+trim_trailing_whitespace = true
+indent_style = space
+indent_size = 4
+max_line_length = 80
+
+[*.java]
+ij_continuation_indent_size = 8
+ij_java_brace_style = end_of_line
+ij_java_class_brace_style = end_of_line
+ij_java_method_brace_style = end_of_line
+ij_java_else_on_new_line = false
+ij_java_catch_on_new_line = false
+ij_java_finally_on_new_line = false
+ij_java_keep_simple_blocks_in_one_line = false
+ij_java_keep_simple_methods_in_one_line = false
+ij_java_keep_simple_classes_in_one_line = false
+ij_java_keep_simple_lambdas_in_one_line = true
+ij_java_blank_lines_after_imports = 1
+ij_java_blank_lines_around_method = 1
+ij_java_blank_lines_around_class = 2
+ij_java_blank_lines_around_field = 0
+ij_java_keep_blank_lines_in_code = 1
+ij_java_keep_blank_lines_in_declarations = 1
+ij_java_class_count_to_use_import_on_demand = 999
+ij_java_names_count_to_use_import_on_demand = 999
+ij_java_imports_layout = *, |, javax.**, java.**, |, $*
+ij_java_space_before_if_parentheses = true
+ij_java_space_before_for_parentheses = true
+ij_java_space_before_while_parentheses = true
+ij_java_space_before_method_call_parentheses = false
+ij_java_space_before_method_parentheses = false
+ij_java_space_after_comma = true
+ij_java_space_around_assignment_operators = true
+ij_java_space_around_equality_operators = true
+ij_java_space_around_relational_operators = true
+ij_java_space_around_additive_operators = true
+ij_java_space_around_multiplicative_operators = true
+ij_java_space_around_logical_operators = true
+ij_java_align_multiline_parameters = true
+ij_java_wrap_long_lines = true
+
+[*.kts]
+ij_continuation_indent_size = 4
+
+[*.md]
+trim_trailing_whitespace = false
+
+[*.{yml,yaml,json,xml}]
+indent_size = 2
