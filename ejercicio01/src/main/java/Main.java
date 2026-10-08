@@ -47,7 +47,7 @@ final class Calculator {
     }
     public static int divide(int lhs, int rhs) {
         if (rhs == 0) {
-            throw new ArithmeticException("Division by zero");
+            throw new ArithmeticException("No se puede dividir entre cero");
         }
 
         return lhs / rhs;
@@ -92,47 +92,49 @@ final class App {
     }
 
     private int readOption() {
-        String text = readLine("Elige una opcion: ");
+        System.out.printf("Elige una opcion: ");
+        String text;
+        try {
+            text = reader.readLine();
+        } catch (IOException e) {
+            throw new UncheckedIOException(e);
+        }
         if (text == null) {
             return EXIT_OPTION;
         }
         try {
-            return Integer.parseInt(text);
+            return Integer.parseInt(text.trim());
         } catch (NumberFormatException e) {
             return -1;
         }
     }
 
     private void operate(Operation operation) {
-        int lhs = readInt("Introduce el primer numero: ");
-        int rhs = readInt("Introduce el segundo numero: ");
+        int lhs = readOperand("Introduce el primer numero: ");
+        int rhs = readOperand("Introduce el segundo numero: ");
         try {
             int result = operation.operator().apply(lhs, rhs);
             System.out.printf("Resultado: %d %c %d = %d%n", lhs,
                     operation.symbol(), rhs, result);
         } catch (ArithmeticException e) {
-            System.out.printf("Error: no se puede dividir entre cero%n");
+            System.out.printf("Error: %s%n", e.getMessage());
         }
     }
 
-    private String readLine(String prompt) {
-        System.out.printf("%s", prompt);
-        try {
-            String line = reader.readLine();
-            return line == null ? null : line.trim();
-        } catch (IOException e) {
-            throw new UncheckedIOException(e);
-        }
-    }
-
-    private int readInt(String prompt) {
+    private int readOperand(String prompt) {
         while (true) {
-            String text = readLine(prompt);
+            System.out.printf("%s", prompt);
+            String text;
+            try {
+                text = reader.readLine();
+            } catch (IOException e) {
+                throw new UncheckedIOException(e);
+            }
             if (text == null) {
                 throw new IllegalStateException("Input closed");
             }
             try {
-                return Integer.parseInt(text);
+                return Integer.parseInt(text.trim());
             } catch (NumberFormatException e) {
                 System.out.printf(
                         "Eso no es un numero entero, intentalo de nuevo%n");
