@@ -21,7 +21,7 @@ per activity; here they all live together, and this table is the index.
 
 | Activity | Exercise       | Description                   |
 |----------|----------------|-------------------------------|
-| 1        | `ejercicio01`  | Hello world                   |
+| 1        | `ejercicio01`  | Calculadora con menú          |
 |          | `ejercicio02`  | Greeting with keyboard input  |
 
 Folder numbering is global and sequential; it does not restart per activity.
