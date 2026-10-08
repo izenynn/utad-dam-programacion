@@ -19,10 +19,10 @@ Requires a JDK 25. Gradle downloads itself through the wrapper.
 Each activity asks for one or more exercises. The teacher may expect one repo
 per activity; here they all live together, and this table is the index.
 
-| Activity | Exercise       | Description                   |
-|----------|----------------|-------------------------------|
-| 1        | `ejercicio01`  | Calculadora con menú          |
-|          | `ejercicio02`  | Greeting with keyboard input  |
+| Activity | Exercise       | Description                      |
+|----------|----------------|----------------------------------|
+| 1        | `ejercicio01`  | Calculator with interactive menu |
+|          | `ejercicio02`  | Greeting with keyboard input     |
 
 Folder numbering is global and sequential; it does not restart per activity.
 When adding an exercise, add its row under its activity.
