@@ -22,7 +22,7 @@ per activity; here they all live together, and this table is the index.
 | Activity | Exercise       | Description                      |
 |----------|----------------|----------------------------------|
 | 1        | `ejercicio01`  | Calculator with interactive menu |
-|          | `ejercicio02`  | Greeting with keyboard input     |
+|          | `ejercicio02`  | Guess the number with hints      |
 
 Folder numbering is global and sequential; it does not restart per activity.
 When adding an exercise, add its row under its activity.

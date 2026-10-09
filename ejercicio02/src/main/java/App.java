@@ -36,18 +36,16 @@ public final class App {
                         randomNumber,
                         totalTries);
                 running = false;
-            } else if (guess == randomNumber) {
-                System.out.printf("Correcto! El numero era %d.%nLo has "
-                                + "adivinado en %d intento(s).%n",
-                        randomNumber,
-                        totalTries);
-                running = false;
             } else if (guess > randomNumber) {
                 System.out.printf("Demasiado alto.%n");
             } else if (guess < randomNumber) {
                 System.out.printf("Demasiado bajo.%n");
             } else {
-                System.out.printf("%n");
+                System.out.printf("Correcto! El numero era %d.%nLo has "
+                                + "adivinado en %d intento(s).%n",
+                        randomNumber,
+                        totalTries);
+                running = false;
             }
         } while (running);
     }
