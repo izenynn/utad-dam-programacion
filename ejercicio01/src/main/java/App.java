@@ -58,7 +58,7 @@ public final class App {
             throw new UncheckedIOException(e);
         }
         if (text == null) {
-            return EXIT_OPTION;
+            throw new IllegalStateException("Input closed");
         }
         try {
             return Integer.parseInt(text.trim());
@@ -105,7 +105,7 @@ public final class App {
         try {
             reader.close();
         } catch (IOException e) {
-            throw new UncheckedIOException(e); // que coño es esto
+            throw new UncheckedIOException(e);
         }
     }
 }

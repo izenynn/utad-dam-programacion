@@ -4,13 +4,15 @@
  * Entry point for ejercicio02.
  */
 
-import java.util.Scanner;
+/**
+ * Entry point
+ */
+public final class Main {
+    static void main(String[] args) {
+        App app = new App();
 
-public class Main {
-    public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-        System.out.print("Nombre: ");
-        String nombre = sc.nextLine();
-        System.out.println("Hola, " + nombre);
+        app.init();
+        app.run();
+        app.quit();
     }
 }
