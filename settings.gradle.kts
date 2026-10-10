@@ -1,6 +1,4 @@
 /*
- * settings.gradle.kts
- *
  * Root build: lists the ejercicios, wires in build-logic, and generates
  * IDE run configurations.
  */

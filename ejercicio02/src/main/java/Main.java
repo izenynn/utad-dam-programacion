@@ -1,9 +1,3 @@
-/*
- * ejercicio02/src/main/java/Main.java
- *
- * Entry point for ejercicio02.
- */
-
 /**
  * Entry point
  */

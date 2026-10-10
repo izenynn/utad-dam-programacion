@@ -1,9 +1,3 @@
-/*
- * ejercicio01/src/main/java/Main.java
- *
- * Entry point for ejercicio01.
- */
-
 /**
  * Entry point: creates the {@link App} and drives its lifecycle.
  */

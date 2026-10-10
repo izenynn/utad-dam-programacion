@@ -1,9 +1,3 @@
-/*
- * ejercicio01/src/main/java/App.java
- *
- * Interactive menu of the calculator.
- */
-
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;

@@ -1,6 +1,4 @@
 /*
- * build-logic/conventions/src/main/kotlin/shared-build-conventions.gradle.kts
- *
  * Shared build conventions applied by every ejercicio: Java 25 toolchain,
  * Main as entry point, keyboard input and UTF-8 sources.
  */

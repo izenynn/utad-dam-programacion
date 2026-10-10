@@ -1,9 +1,3 @@
-/*
- * ejercicio01/src/main/java/Calculator.java
- *
- * The arithmetic of the calculator and the table of operations it offers.
- */
-
 import java.util.List;
 
 /**
