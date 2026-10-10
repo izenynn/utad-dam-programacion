@@ -7,7 +7,6 @@
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.io.UncheckedIOException;
 import java.nio.charset.StandardCharsets;
 import java.util.List;
 
@@ -30,11 +29,22 @@ public final class App {
         boolean running = true;
         do {
             printMenu();
-            int option = readOption();
+            int option;
+            try {
+                option = readOption();
+            } catch (IOException e) {
+                System.out.printf("Error: no se pudo leer la entrada%n");
+                option = EXIT_OPTION;
+            }
             if (option == EXIT_OPTION) {
                 running = false;
             } else if (option >= 1 && option <= OPERATIONS.size()) {
-                operate(OPERATIONS.get(option - 1));
+                try {
+                    operate(OPERATIONS.get(option - 1));
+                } catch (IOException e) {
+                    System.out.printf("Error: no se pudo leer la entrada%n");
+                    running = false;
+                }
             } else {
                 System.out.printf("Opcion no valida%n");
             }
@@ -49,14 +59,9 @@ public final class App {
         System.out.printf("%d. Salir%n", EXIT_OPTION);
     }
 
-    private int readOption() {
+    private int readOption() throws IOException {
         System.out.printf("Elige una opcion: ");
-        String text;
-        try {
-            text = reader.readLine();
-        } catch (IOException e) {
-            throw new UncheckedIOException(e);
-        }
+        String text = reader.readLine();
         if (text == null) {
             throw new IllegalStateException("Input closed");
         }
@@ -67,7 +72,7 @@ public final class App {
         }
     }
 
-    private void operate(Calculator.Operation operation) {
+    private void operate(Calculator.Operation operation) throws IOException {
         int lhs = readOperand("Introduce el primer numero: ");
         int rhs = readOperand("Introduce el segundo numero: ");
         try {
@@ -79,15 +84,10 @@ public final class App {
         }
     }
 
-    private int readOperand(String prompt) {
+    private int readOperand(String prompt) throws IOException {
         while (true) {
             System.out.printf("%s", prompt);
-            String text;
-            try {
-                text = reader.readLine();
-            } catch (IOException e) {
-                throw new UncheckedIOException(e);
-            }
+            String text = reader.readLine();
             if (text == null) {
                 throw new IllegalStateException("Input closed");
             }
@@ -105,7 +105,7 @@ public final class App {
         try {
             reader.close();
         } catch (IOException e) {
-            throw new UncheckedIOException(e);
+            System.out.printf("Aviso: no se pudo cerrar la entrada%n");
         }
     }
 }

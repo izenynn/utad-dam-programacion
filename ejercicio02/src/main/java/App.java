@@ -1,7 +1,6 @@
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.io.UncheckedIOException;
 import java.nio.charset.StandardCharsets;
 
 /**
@@ -29,7 +28,13 @@ public final class App {
         int totalTries = 0;
         do {
             ++totalTries;
-            int guess = readGuess(totalTries);
+            int guess;
+            try {
+                guess = readGuess(totalTries);
+            } catch (IOException e) {
+                System.out.printf("Error: no se pudo leer la entrada%n");
+                break;
+            }
             if (guess == 0) {
                 System.out.printf("El numero era %d.%nTe has rendido despues "
                                 + "de %d intento(s).%n",
@@ -50,16 +55,11 @@ public final class App {
         } while (running);
     }
 
-    private int readGuess(int currentTry) {
+    private int readGuess(int currentTry) throws IOException {
         while (true) {
             System.out.printf("Intento %d: ", currentTry);
 
-            String text;
-            try {
-                text = reader.readLine();
-            } catch (IOException e) {
-                throw new UncheckedIOException(e);
-            }
+            String text = reader.readLine();
             if (text == null) {
                 throw new IllegalStateException("Input closed");
             }
@@ -89,7 +89,7 @@ public final class App {
         try {
             reader.close();
         } catch (IOException e) {
-            throw new UncheckedIOException(e);
+            System.out.printf("Aviso: no se pudo cerrar la entrada%n");
         }
     }
 }
