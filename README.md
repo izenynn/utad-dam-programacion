@@ -28,7 +28,8 @@ Folder numbering is global and sequential; it does not restart per activity.
 When adding an exercise, add its row under its activity.
 
 Structure is based on:
-https://docs.gradle.org/current/userguide/multi_project_builds_intermediate.html
+[Gradle Multi Project Builds](https://docs.gradle.org/current/userguide/multi_project_builds_intermediate.html)
+[Gradle Best Practices Structuring Builds](https://docs.gradle.org/current/userguide/best_practices_structuring_builds.html)
 
 ## Opening in IntelliJ IDEA
 
@@ -112,7 +113,7 @@ IDE-generated files (`.idea`, `.run`, `.project`, `.settings`, `bin`) are in
 The Oracle "Code Conventions for the Java Programming Language" are followed:
 4-space indent, 80 columns, 8-space continuation, K&R braces (opening brace
 on the same line, methods and classes included, unlike C functions).
-https://www.oracle.com/java/technologies/javase/codeconventions-contents.html
+[Oracle Java Code Conventions](https://www.oracle.com/java/technologies/javase/codeconventions-contents.html)
 
 The `.editorconfig` at the root encodes it. IntelliJ applies it on Reformat
 Code (Ctrl+Alt+L). Eclipse needs the "EditorConfig Eclipse" plugin for the
