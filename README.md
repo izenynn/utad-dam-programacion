@@ -27,6 +27,9 @@ per activity; here they all live together, and this table is the index.
 Folder numbering is global and sequential; it does not restart per activity.
 When adding an exercise, add its row under its activity.
 
+Structure is based on:
+https://docs.gradle.org/current/userguide/multi_project_builds_intermediate.html
+
 ## Opening in IntelliJ IDEA
 
 1. File, Open. Select the repo root, the folder containing
@@ -114,3 +117,4 @@ https://www.oracle.com/java/technologies/javase/codeconventions-contents.html
 The `.editorconfig` at the root encodes it. IntelliJ applies it on Reformat
 Code (Ctrl+Alt+L). Eclipse needs the "EditorConfig Eclipse" plugin for the
 basic keys; its formatter does not read the `ij_*` keys.
+
